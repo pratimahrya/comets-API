@@ -1,11 +1,12 @@
 name: api-tests-report
 on: push
+
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2  # This step checks out your repository's code.
+      - name: Checkout code (using latest Node.js version)
+        uses: actions/checkout@v5  # Upgrade to the latest checkout action
 
       - name: Install dependencies
         run: |
@@ -14,7 +15,7 @@ jobs:
 
       - name: Run tests and generate report
         run: |
-          mkdir -p ./report
+          mkdir -p ./report  # Ensure the report directory exists
           pytest tests.py --html=./report/report.html -o log_file=./report/log.txt
 
       - name: Upload report as artifact
