@@ -15,8 +15,7 @@ jobs:
 
       - name: Run tests and generate report
         run: |
-          mkdir -p ./report  # Ensure the report directory exists
-          pytest tests.py --html=./report/report.html -o log_file=./report/log.txt
+          pytest tests.py --html=report.html
 
       - name: Upload report as artifact
         uses: actions/upload-artifact@v2
