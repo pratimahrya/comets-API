@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code (using latest Node.js version)
-        uses: actions/checkout@v5  # Upgrade to the latest checkout action
+        uses: actions/checkout@v3  # Upgrade to the latest checkout action
 
       - name: Install dependencies
         run: |
